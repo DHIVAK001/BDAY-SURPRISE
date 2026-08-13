@@ -2682,11 +2682,3 @@ transform:translateY(-12px);
     }
 
 }
-#nextBtn{
-    position:sticky;
-    bottom:20px;
-    width:90%;
-    margin:20px auto;
-    display:block;
-    z-index:999;
-}
