@@ -2688,3 +2688,36 @@ transform:translateY(-12px);
     }
 
 }
+
+   /* <-- last closing bracket of your CSS */
+
+/* =========================================
+   MOBILE FIX
+========================================= */
+
+@media (max-width:768px){
+
+    .container{
+        width:100%;
+        padding:20px;
+        box-sizing:border-box;
+    }
+
+    .leftPanel,
+    .rightPanel,
+    .memoryCard,
+    .promiseCard,
+    .infoCard{
+        width:100%;
+        max-width:100%;
+        margin:15px auto;
+        border-radius:25px;
+        overflow:hidden;
+        box-sizing:border-box;
+    }
+
+    .infoCard{
+        padding:20px;
+    }
+
+}
