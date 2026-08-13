@@ -342,23 +342,12 @@ button:hover{
 =========================== */
 
 #memoryImage{
-
     width:100%;
-
-    max-width:650px;
-
-    border-radius:22px;
-
-    object-fit:cover;
-
-    box-shadow:
-        0 20px 45px rgba(0,0,0,.45);
-
-    border:4px solid rgba(255,255,255,.25);
-
-    animation:photoZoom 8s linear forwards;
-
-    transition:opacity .5s ease;
+    max-height:60vh;
+    object-fit:contain;
+    border-radius:20px;
+    display:block;
+    margin:auto;
 }
 #memoryImage:hover{
     transform:scale(1.03);
@@ -389,7 +378,12 @@ button:hover{
     margin-bottom:20px;
 
 }
-
+.memoryContent{
+    height:100vh;
+    overflow-y:auto;
+    padding-bottom:100px;
+    box-sizing:border-box;
+}
 /* ===========================
    MEMORY QUOTES
 =========================== */
@@ -2688,36 +2682,11 @@ transform:translateY(-12px);
     }
 
 }
-
-   /* <-- last closing bracket of your CSS */
-
-/* =========================================
-   MOBILE FIX
-========================================= */
-
-@media (max-width:768px){
-
-    .container{
-        width:100%;
-        padding:20px;
-        box-sizing:border-box;
-    }
-
-    .leftPanel,
-    .rightPanel,
-    .memoryCard,
-    .promiseCard,
-    .infoCard{
-        width:100%;
-        max-width:100%;
-        margin:15px auto;
-        border-radius:25px;
-        overflow:hidden;
-        box-sizing:border-box;
-    }
-
-    .infoCard{
-        padding:20px;
-    }
-
+#nextBtn{
+    position:sticky;
+    bottom:20px;
+    width:90%;
+    margin:20px auto;
+    display:block;
+    z-index:999;
 }
