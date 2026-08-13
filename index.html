@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise 🎂</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="hearts"></div>
+<div id="sparkles"></div>
+<div id="memorySparkles"></div>
+<div class="stars"></div>
+<div class="container screen">
+<div id="introScreen"></div>
+<h1 id="title">🎉 A Special Surprise 🎉</h1>
+
+<p id="message">
+Hello, <strong>Shobana S</strong><br><br>
+This website has been created especially for your birthday.
+</p>
+<div id="heartDisplay">
+
+    <span class="heartSlot">♡</span>
+    <span class="heartSlot">♡</span>
+    <span class="heartSlot">♡</span>
+    <span class="heartSlot">♡</span>
+
+</div>
+<input
+type="password"
+id="password"
+placeholder="ASK YOUR FRIEND"
+maxlength="4">
+<div id="scrollUpBtn">⬆</div>
+<div id="scrollDownBtn">⬇</div>
+<br><br>
+<div id="pinPad">
+
+    <button class="pinBtn">1</button>
+    <button class="pinBtn">2</button>
+    <button class="pinBtn">3</button>
+
+    <button class="pinBtn">4</button>
+    <button class="pinBtn">5</button>
+    <button class="pinBtn">6</button>
+
+    <button class="pinBtn">7</button>
+    <button class="pinBtn">8</button>
+    <button class="pinBtn">9</button>
+
+    <button class="pinBtn">*</button>
+    <button class="pinBtn">0</button>
+    <button class="pinBtn">⌫</button>
+
+    
+
+</div>
+<!-- Wrong Password Popup -->
+<div id="wrongPasswordPopup" class="wrong-popup">
+
+    <div class="sadEmoji">🥺</div>
+
+    <div class="wrongTitle">
+        Oops...
+    </div>
+
+    <div class="wrongMessage">
+        That's not the secret birthday password.<br>
+        Try again! ❤️
+    </div>
+
+</div>
+<button id="unlockButton">
+PASSWORD VENUMAA ?
+</button>
+
+<p id="errorMessage"></p>
+
+</div>
+<div id="countdownScreen" style="display:none;">
+
+    <div id="countNumber">3</div>
+
+    <div id="countMessage">
+        Password Accepted ❤️
+    </div>
+
+</div>
+<div id="loadingScreen" style="display:none;">
+
+    <div id="loadingHearts"></div>
+
+    <div class="loadingCard">
+
+        <h1>🎂</h1>
+
+        <h2>Preparing your surprise...</h2>
+
+        <p id="loadingText">
+            Collecting beautiful memories 💕
+        </p>
+
+        <div class="loadingBar">
+
+            <div id="loadingProgress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Birthday Cake Screen -->
+<div id="cakeScreen" style="display:none;">
+
+    <div class="cakeContainer">
+
+        <div class="cakeEmoji">🎂</div>
+
+        <div class="cakeTitle">
+            Happy Birthday Shobana ❤️
+        </div>
+
+        <div class="cakeText">
+            Make a wish...
+        </div>
+
+        <div id="candles">
+            🕯️ 🕯️ 🕯️
+        </div>
+
+    </div>
+
+</div>
+<div id="welcomeScreen" class="screen" style="display:none;">
+
+    <h1>Happy Birthday</h1>
+
+    <h2>Shobana S</h2>
+
+    <p>
+        Today is all about celebrating you.<br>
+        Wishing you happiness, success, and countless beautiful memories.
+    </p>
+
+    <button id="beginJourney">
+        Begin the Journey ✨
+    </button>
+
+</div>
+<audio id="transitionSound" src="music/whoosh.mp3" preload="auto"></audio>
+<audio id="bgMusic" loop>
+
+    <source src="music/birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<button id="musicToggle">🔊</button>
+<div id="introStory" class="screen" style="display:none;">
+
+    <div class="introCard">
+
+        <h2 id="storyLine"></h2>
+
+    </div>
+
+</div>
+<div id="memoryScreen" class="screen" style="display:none;">
+
+    <div class="memoryCard">
+
+        <div class="memoryHeader">
+
+    <h3 id="chapterName">
+        🌸 Chapter 1
+    </h3>
+
+    <h2 id="memoryCount">
+        Memory 1 / 28
+    </h2>
+
+</div>
+        <h2 id="memoryTitle"></h2>
+
+        <h4 id="memorySubtitle"></h4>
+        <div class="progressBar">
+            <div id="progressFill"></div>
+        </div>
+
+<div class="imageContainer">
+
+    <div id="imageLoader"></div>
+
+    <div class="memoryImageWrapper" id="memoryWrapper">
+        <div class="storyProgress">
+
+    <div id="storyBar"></div>
+
+</div>
+        <img id="memoryImage"
+        
+            src="images/photo1.jpg"
+            alt="Memory"
+        >
+    </div>
+
+    <h2 id="memoryTitle"></h2>
+
+</div>
+
+
+
+        <p id="memoryQuote">
+            Every unforgettable friendship has a first memory. This was ours. ❤️
+        </p>
+
+        <div class="memoryButtons">
+            <button id="prevBtn">⬅ Previous</button>
+            <button id="nextBtn">Next ➡</button>
+        </div>
+        
+    </div>
+    <div id="imageViewer">
+
+    <span id="closeViewer">&times;</span>
+
+    <img id="fullImage" alt="Full Image">
+
+</div>
+<div id="floatingMessages"></div>
+</div>
+<div id="chapterScreen" style="display:none;">
+
+    <div class="chapterCard">
+
+        <h1 id="chapterTitle"></h1>
+
+        <p id="chapterSubtitle"></p>
+
+    </div>
+
+</div>
+<div id="letterScreen" class="screen" style="display:none;">
+
+    <div class="letterCard">
+
+        <h1>💌 A Letter Just For You</h1>
+
+    <div id="envelope">
+    
+    <div class="envelopeFront">
+        💌
+    </div>
+
+    <div class="envelopeText">
+        Tap to Open
+    </div>
+
+</div>
+<div id="letterContent" style="display:none;">
+
+            <h2>Dear Shobana,</h2>
+
+            <p id="birthdayLetter"></p>
+
+            <button id="finishBtn">
+                Continue 🎁
+            </button>
+
+        </div>
+    </div>
+
+</div>
+<div id="memoryCompleteScreen" class="screen" style="display:none;">
+
+    <div class="chapterCard">
+
+        <h1>✨ Congratulations ✨</h1>
+
+        <p>
+            You have unlocked all 28 beautiful memories ❤️
+            <br><br>
+            One last surprise is waiting for you...
+        </p>
+
+    </div>
+
+</div>
+<div id="giftScreen" style="display:none;">
+
+    <div class="giftCard">
+
+        <h1>🎁</h1>
+
+        <h2>One Last Surprise</h2>
+
+        <p>
+            You've reached the end of our memories.<br><br>
+            Tap the gift to open your final surprise.
+        </p>
+
+        <div id="giftBox">
+
+    <div id="giftLid"></div>
+
+    <div id="giftBody"></div>
+
+    <div id="giftRibbonVertical"></div>
+
+    <div id="giftRibbonHorizontal"></div>
+
+</div>
+
+<p id="giftText">
+🎁 Tap the Gift 🎁
+</p>
+
+    </div>
+
+</div>
+<div id="finalScreen" class="screen" style="display:none;">
+
+    <div class="finalCard">
+
+        <h1>🎉 Happy Birthday 🎉</h1>
+
+        <h2>Shobana S ❤️</h2>
+
+        <p>
+            May your smile always stay this beautiful.<br><br>
+
+            Wishing you happiness,
+            success,
+            good health,
+            and countless unforgettable memories.
+
+            <br><br>
+
+            Thank you for being such a wonderful friend.
+
+            🌸✨
+        </p>
+
+        <button id="replayBtn">
+            🔄 Replay Memories
+        </button>
+
+    </div>
+<div class="birthdayStats">
+
+    <div class="statItem">
+        <span>🎂 Age</span>
+        <strong id="friendAge"></strong>
+    </div>
+
+    <div class="statItem">
+        <span>🎈 Birthday</span>
+        <strong>15 August 2003</strong>
+    </div>
+
+    <div class="statItem">
+        <span>📸 Memories</span>
+        <strong>28 Beautiful Memories</strong>
+    </div>
+
+    <div class="statItem">
+        <span>❤️ Wishes</span>
+        <strong>Infinite Happiness</strong>
+    </div>
+
+</div>
+</div>
+<div id="thankYouScreen" class="screen" style="display:none;">
+
+    <div class="chapterCard">
+
+        <h1>❤️ Thank You ❤️</h1>
+
+<p id="thankMessage"></p>
+
+    </div>
+
+</div>    
+<!-- Friendship Promise Screen -->
+<div id="promiseScreen" class="promise-screen">
+
+    <div class="promise-card">
+
+        <h1 class="promise-title">
+            🤝 Friendship Promise 🤝
+        </h1>
+
+        <p id="promiseText" class="promise-body"></p>
+
+        <button id="promiseNextBtn">
+            FINISH HERE ❤️
+        </button>
+
+    </div>
+<button id="replayStoryBtn" class="replayBtn">
+    💖 Replay Our Story
+</button>
+</div>
+
+<!-- ===== CREDITS SCREEN ===== -->
+<div id="creditsScreen" class="credits-screen">
+
+    <div class="madeby">
+        MADE WITH ❤️ BY
+    </div>
+
+    <div id="nameContainer" class="name-container"></div>
+
+    <div id="friendText" class="friend-text">
+        BEST FRIEND FOREVER
+    </div>
+
+</div>
+<div id="balloons"></div>
+<div id="petals"></div>
+<div id="petals"></div>
+<div id="sparkles"></div>
+<script src="script.js"></script>
+</body>
+</html>
