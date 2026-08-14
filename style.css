@@ -1996,7 +1996,6 @@ button:active{
 
     align-items:center;
 
-    gap:10px;
     padding:10px 0;
 
     color:white;
@@ -2019,23 +2018,6 @@ button:active{
 
     font-size:20px;
 
-}
-
-@media (max-width: 768px){
-    .birthdayStats {
-        width: min(92vw, 340px);
-        padding: 14px 12px;
-        margin: 18px auto;
-    }
-
-    .statItem {
-        font-size: 14px;
-        padding: 8px 0;
-    }
-
-    .statItem strong {
-        font-size: 16px;
-    }
 }
 #continueBtn{
     position: sticky;
