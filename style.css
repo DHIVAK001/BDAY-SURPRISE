@@ -1833,7 +1833,7 @@ button:active{
 }
 
 #memoryCompleteScreen h1 {
-    width: 100%;
+    width: 90%;
     font-size: clamp(30px, 7vw, 52px);
     line-height: 1.2;
     margin: 0 auto 12px;
