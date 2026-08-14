@@ -1927,21 +1927,13 @@ button:hover{
 }
 
 .statItem{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:10px 0;
-
     color:white;
-
     font-size:18px;
-
     border-bottom:1px solid rgba(255,255,255,.15);
-
 }
 
 .statItem:last-child{
@@ -2690,196 +2682,60 @@ body{
     }
 
 }
-/* ================= MOBILE FIX FOR BIRTHDAY & PROMISE ================= */
-
-@media only screen and (max-width:768px){
+@media (max-width:768px){
 
 #birthdayScreen,
 #promiseScreen{
     width:100%;
-    max-width:100%;
+    min-height:100vh;
+    padding:20px;
     overflow-x:hidden;
-    padding:20px 15px;
     box-sizing:border-box;
 }
 
 .birthdayCard,
 .birthdayStats,
 .promise-card{
-
-    width:100% !important;
-    max-width:100% !important;
-
-    margin:0 auto !important;
-
-    left:auto !important;
-    right:auto !important;
-
-    transform:none !important;
-
-    box-sizing:border-box;
-}
-
-.promise-title,
-.promise-body{
-
     width:100%;
     max-width:100%;
-    word-break:break-word;
+    margin:0 auto;
+}
+
+.promise-screen{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.promise-title{
+    width:100%;
+    font-size:42px;
+    text-align:center;
+    line-height:1.2;
+}
+
+#promiseText{
+    width:100%;
+    max-width:100%;
+    margin:20px auto;
+    padding:0;
+    text-align:center;
+    font-size:34px;
+    box-sizing:border-box;
 }
 
 #replayStoryBtn,
 #replayBtn{
-
     width:90%;
     max-width:320px;
-    margin:25px auto 0;
     display:block;
+    margin:35px auto 0;
+    position:static;
 }
 
-}
-/* ---------- PERFECT MOBILE FIX ---------- */
-
-@media (max-width:768px){
-
-.promise-card{
-
-    width:calc(100% - 24px) !important;
-
-    max-width:100% !important;
-
-    padding:22px !important;
-
-    margin:0 auto !important;
-
-    box-sizing:border-box;
-
+body{
+    overflow-x:hidden;
 }
 
-.birthdayStats{
-
-    width:calc(100% - 24px) !important;
-
-    margin:20px auto !important;
-
-    padding:18px !important;
-
-    box-sizing:border-box;
-
-}
-
-.promise-screen,
-.birthday-screen{
-
-    overflow-x:hidden !important;
-
-    padding:12px;
-
-    box-sizing:border-box;
-
-}
-
-}
-/* ===========================
-   FRIENDSHIP PAGE - MOBILE FIX
-   =========================== */
-@media (max-width:768px){
-
-    /* Main container */
-    .friendshipContainer,
-    .friendshipPage,
-    .promiseContainer{
-        display:flex !important;
-        flex-direction:column !important;
-        width:100% !important;
-        max-width:100% !important;
-        overflow-x:hidden !important;
-    }
-
-    /* Left and right sections become full width */
-    .friendLeft,
-    .friendRight,
-    .leftSide,
-    .rightSide,
-    .promiseLeft,
-    .promiseRight{
-        width:100% !important;
-        max-width:100% !important;
-        flex:none !important;
-    }
-
-    /* Remove vertical divider */
-    .divider,
-    .verticalLine,
-    .middleLine{
-        display:none !important;
-    }
-
-    /* Heading */
-    .friendshipTitle{
-        font-size:48px !important;
-        line-height:1.2 !important;
-        text-align:center !important;
-        width:100%;
-    }
-
-    /* Paragraph */
-    .friendshipText{
-        width:90% !important;
-        margin:20px auto !important;
-        text-align:center !important;
-    }
-
-    /* Replay button at bottom */
-    #replayBtn{
-        position:static !important;
-        display:block !important;
-        width:90% !important;
-        margin:35px auto 20px !important;
-    }
-
-    .memoryButtons{
-        width:100%;
-        display:flex;
-        justify-content:center;
-    }
-
-    body{
-        overflow-x:hidden !important;
-    }
-}
-@media (max-width:768px){
-
-    .promise-screen{
-        display:flex !important;
-        flex-direction:column !important;
-        width:100% !important;
-        min-height:100vh !important;
-        padding:25px 18px !important;
-    }
-
-    .promise-card{
-        width:100% !important;
-        max-width:100% !important;
-        margin:0 auto !important;
-    }
-
-    .promise-title{
-        width:100%;
-        text-align:center;
-        font-size:42px;
-        line-height:1.2;
-        white-space:normal;
-    }
-
-    .promise-body{
-        width:100%;
-        text-align:center;
-    }
-
-    .replayBtn{
-        position:static !important;
-        margin:30px auto 0 !important;
-        width:90% !important;
-    }
 }
