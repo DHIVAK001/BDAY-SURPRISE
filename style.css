@@ -2682,3 +2682,75 @@ transform:translateY(-12px);
     }
 
 }
+/* ================= MOBILE WIDTH FIX ================= */
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+@media (max-width:768px){
+
+    .container,
+    .screen,
+    .page,
+    .memoryScreen,
+    .letterScreen,
+    .promiseScreen{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
+        padding-left:15px;
+        padding-right:15px;
+        margin:0 auto;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+        display:block;
+    }
+
+    .glassCard,
+    .infoBox,
+    .promiseBox,
+    .memoryCard{
+        width:100%;
+        max-width:100%;
+        margin:15px auto;
+        border-radius:24px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p{
+        word-wrap:break-word;
+    }
+}
+*{
+    outline:1px solid red !important;
+}
+@media (max-width:768px){
+
+    html,
+    body{
+        overflow-x:hidden;
+    }
+
+    *{
+        box-sizing:border-box;
+        max-width:100%;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+    }
+}
