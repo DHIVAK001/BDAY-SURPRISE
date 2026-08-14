@@ -1834,7 +1834,7 @@ button:active{
 
 #memoryCompleteScreen h1 {
     width: 90%;
-    font-size: clamp(30px, 7vw, 52px);
+    font-size: clamp(24px, 5.8vw, 42px);
     line-height: 1.2;
     margin: 0 auto 12px;
 }
@@ -1842,7 +1842,7 @@ button:active{
 #memoryCompleteScreen p {
     width: 100%;
     max-width: 100%;
-    font-size: clamp(18px, 4vw, 26px);
+    font-size: clamp(16px, 3.2vw, 22px);
     line-height: 1.6;
     margin: 0 auto;
 }
