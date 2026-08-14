@@ -1823,16 +1823,28 @@ button:active{
 }
 
 #memoryCompleteScreen .chapterCard {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min(90vw, 520px);
+    padding: 20px 18px;
+    margin: 0 auto;
 }
 
 #memoryCompleteScreen h1 {
+    width: 100%;
     font-size: clamp(30px, 7vw, 52px);
+    line-height: 1.2;
+    margin: 0 auto 12px;
 }
 
 #memoryCompleteScreen p {
+    width: 100%;
+    max-width: 100%;
     font-size: clamp(18px, 4vw, 26px);
     line-height: 1.6;
+    margin: 0 auto;
 }
 #thankYouScreen{
 
