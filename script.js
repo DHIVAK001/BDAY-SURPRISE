@@ -1383,11 +1383,13 @@ function showPromise() {
 
             promiseText.textContent += promiseMessage.charAt(i);
 
-            // Smoothly keep the latest text visible
-            promiseScreen.scrollTo({
-                top: promiseScreen.scrollHeight,
-                behavior: "smooth"
-            });
+            const isNearBottom = promiseScreen.scrollTop + promiseScreen.clientHeight >= promiseScreen.scrollHeight - 30;
+            if (isNearBottom) {
+                promiseScreen.scrollTo({
+                    top: promiseScreen.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
 
             i++;
 
