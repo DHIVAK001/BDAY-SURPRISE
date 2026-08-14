@@ -1402,7 +1402,7 @@ function showPromise() {
 
             promiseText.innerHTML = promiseText.innerHTML.replace(
                 /__BEST_FRIENDS_FOREVER__/g,
-                '<span class="promise-signoff">🤝 Best Friends Forever 🤝</span>'
+                '<span class="promise-signoff"> Best Friends Forever </span>'
             );
 
             promiseNextBtn.style.display = "inline-block";
