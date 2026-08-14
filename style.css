@@ -2295,6 +2295,23 @@ opacity:1;
         white-space:nowrap;
         transform:translateZ(0);
     }
+
+    .statItem {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    .statItem span {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .statItem strong {
+        display: block;
+    }
 }
 
 @keyframes cardRise{
