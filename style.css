@@ -1818,6 +1818,21 @@ button:active{
 
     text-align:center;
 
+    font-size: clamp(16px, 2.4vw, 24px);
+
+}
+
+#memoryCompleteScreen .chapterCard {
+    padding: 20px;
+}
+
+#memoryCompleteScreen h1 {
+    font-size: clamp(30px, 7vw, 52px);
+}
+
+#memoryCompleteScreen p {
+    font-size: clamp(18px, 4vw, 26px);
+    line-height: 1.6;
 }
 #thankYouScreen{
 
