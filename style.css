@@ -2144,7 +2144,7 @@ opacity:1;
 
 .promise-card{
 
-    width:min(100%,900px);
+    width:min(92%,900px);
 
     height:90vh;
 
@@ -2809,72 +2809,4 @@ body{
 
 }
 
-}
-/* ===========================
-   FRIENDSHIP PAGE - MOBILE FIX
-   =========================== */
-@media (max-width:768px){
-
-    /* Main container */
-    .friendshipContainer,
-    .friendshipPage,
-    .promiseContainer{
-        display:flex !important;
-        flex-direction:column !important;
-        width:100% !important;
-        max-width:100% !important;
-        overflow-x:hidden !important;
-    }
-
-    /* Left and right sections become full width */
-    .friendLeft,
-    .friendRight,
-    .leftSide,
-    .rightSide,
-    .promiseLeft,
-    .promiseRight{
-        width:100% !important;
-        max-width:100% !important;
-        flex:none !important;
-    }
-
-    /* Remove vertical divider */
-    .divider,
-    .verticalLine,
-    .middleLine{
-        display:none !important;
-    }
-
-    /* Heading */
-    .friendshipTitle{
-        font-size:48px !important;
-        line-height:1.2 !important;
-        text-align:center !important;
-        width:100%;
-    }
-
-    /* Paragraph */
-    .friendshipText{
-        width:90% !important;
-        margin:20px auto !important;
-        text-align:center !important;
-    }
-
-    /* Replay button at bottom */
-    #replayBtn{
-        position:static !important;
-        display:block !important;
-        width:90% !important;
-        margin:35px auto 20px !important;
-    }
-
-    .memoryButtons{
-        width:100%;
-        display:flex;
-        justify-content:center;
-    }
-
-    body{
-        overflow-x:hidden !important;
-    }
 }
