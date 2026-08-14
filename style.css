@@ -7,8 +7,8 @@
 body{
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg,#ffd6e8,#ffeef5,#fff5fa);
-    height:100vh;
-
+    min-height:100vh;
+    min-height:100dvh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -658,14 +658,26 @@ button:hover{
 
     body{
         overflow-x:hidden;
+        align-items:flex-start;
+        padding:20px 0 30px;
+    }
+
+    .container{
+        margin-top:20px;
+        width:min(92vw, 440px);
+        padding:24px 18px;
     }
 
     .container,
     .memoryCard,
     .letterCard,
-    .finalCard{
+    .finalCard,
+    .giftCard,
+    .loadingCard,
+    .promise-card{
 
         width:92%;
+        max-width:440px;
         padding:20px;
 
     }
@@ -683,6 +695,32 @@ button:hover{
         font-size:17px;
         line-height:1.7;
 
+    }
+
+    #password{
+        width:min(100%, 260px);
+        font-size:18px;
+    }
+
+    #pinPad{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+        gap:12px;
+        width:min(100%, 280px);
+        margin:25px auto 0;
+    }
+
+    .pinBtn{
+        width:100%;
+        height:68px;
+        font-size:24px;
+    }
+
+    #heartDisplay{
+        gap:10px;
+    }
+
+    .heartSlot{
+        font-size:28px;
     }
 
     #memoryImage{
@@ -706,7 +744,8 @@ button:hover{
     #replayBtn,
     #beginJourney,
     #unlockButton,
-    #openLetterBtn{
+    #openLetterBtn,
+    #promiseNextBtn{
 
         width:100%;
         font-size:18px;
@@ -720,7 +759,95 @@ button:hover{
 
     }
 
+    #storyLine,
+    .cakeTitle,
+    .finalCard h1,
+    .promise-title{
+        font-size:clamp(28px, 7vw, 42px);
+    }
+
+    #welcomeScreen h1{
+        font-size:38px;
+    }
+
+    #welcomeScreen h2{
+        font-size:30px;
+    }
+
+    #welcomeScreen p,
+    #memoryQuote,
+    .finalCard p,
+    .cakeText,
+    .wrongMessage,
+    .promise-body{
+        font-size:16px;
+    }
+
+    #promiseText{
+        font-size:26px;
+        width:100%;
+    }
+
+    .wrong-popup{
+        width:min(82vw, 300px);
+    }
+
+    #scrollUpBtn,
+    #scrollDownBtn{
+        width:48px;
+        height:48px;
+        right:14px;
+    }
+
+    #scrollUpBtn{ bottom:88px; }
+    #scrollDownBtn{ bottom:22px; }
+
+    #countNumber,
+    .cakeEmoji{
+        font-size:72px;
+    }
+
+}    
+
+@media (max-width: 480px){
+    .container,
+    .memoryCard,
+    .letterCard,
+    .finalCard,
+    .giftCard,
+    .loadingCard,
+    .promise-card{
+        width:min(94vw, 360px);
+        padding:18px 14px;
+    }
+
+    #title,
+    .cakeTitle,
+    .finalCard h1{
+        font-size:28px;
+    }
+
+    button,
+    .memoryButtons button,
+    .pinBtn,
+    #unlockButton{
+        font-size:16px;
+    }
+
+    .pinBtn{
+        height:62px;
+    }
+
+    #memoryCount{
+        font-size:18px;
+    }
+
+    #memoryQuote{
+        font-size:22px;
+        padding:14px 16px;
+    }
 }
+
 #letterContent{
 
     display:none;
@@ -2167,7 +2294,9 @@ opacity:1;
 #promiseText{
 
     width:90%;
+
     max-width:700px;
+
     margin:25px auto;
 
     color:#ffffff;
@@ -2679,15 +2808,14 @@ transform:translateY(-12px);
         transform:scale(1);
     }
 
-}/* ================= MOBILE FIX ================= */
+}
+/* ================= MOBILE WIDTH FIX ================= */
 
 html,
 body{
     width:100%;
     max-width:100%;
     overflow-x:hidden;
-    margin:0;
-    padding:0;
 }
 
 *{
@@ -2696,22 +2824,18 @@ body{
 
 @media (max-width:768px){
 
-    section,
     .container,
     .screen,
     .page,
-    .birthdayPage,
-    .promisePage,
     .memoryScreen,
-    .letterScreen{
-
+    .letterScreen,
+    .promiseScreen{
         width:100%;
         max-width:100%;
-        margin:0;
-        padding-left:18px;
-        padding-right:18px;
-        overflow:hidden;
-
+        overflow-x:hidden;
+        padding-left:15px;
+        padding-right:15px;
+        margin:0 auto;
     }
 
     img{
@@ -2720,52 +2844,38 @@ body{
         display:block;
     }
 
-}
-/* ================= MOBILE FIX FOR BIRTHDAY & PROMISE ================= */
+    .glassCard,
+    .infoBox,
+    .promiseBox,
+    .memoryCard{
+        width:100%;
+        max-width:100%;
+        margin:15px auto;
+        border-radius:24px;
+    }
 
-@media only screen and (max-width:768px){
-
-#birthdayScreen,
-#promiseScreen{
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-    padding:20px 15px;
-    box-sizing:border-box;
-}
-
-.birthdayCard,
-.birthdayStats,
-.promise-card{
-
-    width:100% !important;
-    max-width:100% !important;
-
-    margin:0 auto !important;
-
-    left:auto !important;
-    right:auto !important;
-
-    transform:none !important;
-
-    box-sizing:border-box;
+    h1,
+    h2,
+    h3,
+    p{
+        word-wrap:break-word;
+    }
 }
 
-.promise-title,
-.promise-body{
+@media (max-width:768px){
 
-    width:100%;
-    max-width:100%;
-    word-break:break-word;
-}
+    html,
+    body{
+        overflow-x:hidden;
+    }
 
-#replayStoryBtn,
-#replayBtn{
+    *{
+        box-sizing:border-box;
+        max-width:100%;
+    }
 
-    width:90%;
-    max-width:320px;
-    margin:25px auto 0;
-    display:block;
-}
-
+    img{
+        max-width:100%;
+        height:auto;
+    }
 }
