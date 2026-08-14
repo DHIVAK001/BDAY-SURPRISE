@@ -1358,7 +1358,7 @@ and endless smiles.
 Never stop believing in yourself,
 because you are truly amazing.
 
-🤝 Best Friends Forever 🤝
+__BEST_FRIENDS_FOREVER__
 
 With lots of love,
 
@@ -1399,6 +1399,11 @@ function showPromise() {
 
             typingSound.pause();
             typingSound.currentTime = 0;
+
+            promiseText.innerHTML = promiseText.innerHTML.replace(
+                /__BEST_FRIENDS_FOREVER__/g,
+                '<span class="promise-signoff">🤝 Best Friends Forever 🤝</span>'
+            );
 
             promiseNextBtn.style.display = "inline-block";
 
