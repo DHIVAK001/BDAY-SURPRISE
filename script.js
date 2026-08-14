@@ -23,7 +23,6 @@ const cakeScreen = document.getElementById("cakeScreen");
 const memoryCount = document.getElementById("memoryCount");
 const progressFill = document.getElementById("progressFill");
 const nextBtn = document.getElementById("nextBtn");
-const replayStoryBtn = document.getElementById("replayStoryBtn");
 const prevBtn = document.getElementById("prevBtn");
 const memoryTitle = document.getElementById("memoryTitle");
 const beginJourney = document.getElementById("beginJourney");
@@ -46,7 +45,6 @@ const creditsScreen=document.getElementById("creditsScreen");
 const friendText=document.getElementById("friendText");
 const promiseScreen=document.getElementById("promiseScreen");
 const promiseText=document.getElementById("promiseText");
-const promiseReplayBtn=document.getElementById("promiseReplayBtn");
 const promiseNextBtn = document.getElementById("promiseNextBtn");
 const heartDisplay = document.getElementById("heartDisplay");
 const wrongPasswordPopup = document.getElementById("wrongPasswordPopup");
@@ -1409,11 +1407,6 @@ function showPromise() {
 }
 
 
-if (promiseReplayBtn) {
-    promiseReplayBtn.onclick = function () {
-        location.reload();
-    };
-}
 promiseNextBtn.onclick = function () {
 
     promiseScreen.style.display = "none";
@@ -1457,16 +1450,3 @@ document.getElementById("promiseNextBtn").onclick = function () {
     showCredits();
 
 };
-if(replayStoryBtn){
-
-    replayStoryBtn.onclick=function(){
-
-        if(confirm("💖 Would you like to relive our beautiful journey once again?")){
-
-            location.reload();
-
-        }
-
-    };
-
-}
