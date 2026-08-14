@@ -651,68 +651,150 @@ button:active{
 
 @media (max-width: 768px){
 
-    body{
+    html, body {
         overflow-x:hidden;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body{
+        align-items:flex-start;
+        padding:18px 0 30px;
     }
 
     .container,
     .memoryCard,
     .letterCard,
-    .finalCard{
+    .finalCard,
+    .giftCard,
+    .promise-card {
+        width:min(92vw, 430px);
+        max-width:92vw;
+        padding:22px 18px;
+    }
 
-        width:92%;
-        padding:20px;
-
+    .container{
+        margin-top:16px;
+        border-radius:24px;
     }
 
     h1{
-        font-size:32px;
+        font-size:clamp(30px, 7vw, 42px);
     }
 
     h2{
-        font-size:24px;
+        font-size:clamp(22px, 5.5vw, 30px);
     }
 
     p{
-
         font-size:17px;
         line-height:1.7;
-
     }
 
-    #memoryImage{
-
-        width:100%;
-        height:auto;
-        max-height:60vh;
-        object-fit:contain;
-
-    }
-
-    .memoryButtons{
-
-        flex-direction:column;
-        gap:15px;
-
-    }
-
+    button,
     .memoryButtons button,
     #finishBtn,
     #replayBtn,
     #beginJourney,
     #unlockButton,
-    #openLetterBtn{
-
+    #openLetterBtn,
+    #promiseNextBtn {
         width:100%;
+        min-height:52px;
         font-size:18px;
+        padding:14px 18px;
+    }
 
+    #password{
+        width:min(90vw, 290px);
+        font-size:18px;
+        padding:16px 14px;
+    }
+
+    #pinPad{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+        gap:12px;
+        width:min(90vw, 280px);
+        margin:20px auto 0;
+    }
+
+    .pinBtn{
+        width:100%;
+        height:68px;
+        font-size:24px;
+    }
+
+    #musicToggle{
+        top:14px;
+        right:14px;
+        width:54px;
+        height:54px;
+        font-size:24px;
+    }
+
+    #memoryImage{
+        width:100%;
+        height:auto;
+        max-height:60vh;
+        object-fit:contain;
+    }
+
+    .memoryButtons{
+        flex-direction:column;
+        gap:15px;
     }
 
     #memoryCount{
-
         font-size:22px;
         transition:opacity .3s ease;
+    }
 
+    .promise-screen {
+        padding:16px;
+    }
+
+    .promise-card {
+        width:100%;
+        max-width:100%;
+        min-height:70vh;
+        height:auto;
+        padding:20px 16px;
+        border-radius:22px;
+    }
+
+    .promise-title {
+        font-size:clamp(28px, 7vw, 42px);
+        margin-bottom:18px;
+    }
+
+    #promiseText {
+        width:100%;
+        max-width:100%;
+        margin:0 auto 18px;
+        font-size:clamp(28px, 7vw, 38px);
+        line-height:1.3;
+    }
+
+    .giftCard,
+    .finalCard {
+        padding:24px 18px;
+    }
+
+    .wrong-popup {
+        width:min(84vw, 300px);
+    }
+
+    #scrollUpBtn,
+    #scrollDownBtn {
+        width:48px;
+        height:48px;
+        right:14px;
+    }
+
+    #scrollUpBtn { bottom:88px; }
+    #scrollDownBtn { bottom:22px; }
+
+    * {
+        touch-action: manipulation;
     }
 
 }
@@ -2682,6 +2764,15 @@ body{
     h3,
     p{
         word-wrap:break-word;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 
