@@ -2734,7 +2734,7 @@ body{
 
 @media (max-width:768px){
 
-.promiseText{
+.promise-card{
 
     width:calc(100% - 24px) !important;
 
@@ -2780,7 +2780,7 @@ body{
     /* Main container */
     .friendshipContainer,
     .friendshipPage,
-    .promiseText{
+    .promiseContainer{
         display:flex !important;
         flex-direction:column !important;
         width:100% !important;
