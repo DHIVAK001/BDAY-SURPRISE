@@ -7,8 +7,8 @@
 body{
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg,#ffd6e8,#ffeef5,#fff5fa);
-    min-height:100vh;
-    min-height:100dvh;
+    height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
@@ -658,26 +658,14 @@ button:hover{
 
     body{
         overflow-x:hidden;
-        align-items:flex-start;
-        padding:20px 0 30px;
-    }
-
-    .container{
-        margin-top:20px;
-        width:min(92vw, 440px);
-        padding:24px 18px;
     }
 
     .container,
     .memoryCard,
     .letterCard,
-    .finalCard,
-    .giftCard,
-    .loadingCard,
-    .promise-card{
+    .finalCard{
 
         width:92%;
-        max-width:440px;
         padding:20px;
 
     }
@@ -695,32 +683,6 @@ button:hover{
         font-size:17px;
         line-height:1.7;
 
-    }
-
-    #password{
-        width:min(100%, 260px);
-        font-size:18px;
-    }
-
-    #pinPad{
-        grid-template-columns:repeat(3, minmax(0, 1fr));
-        gap:12px;
-        width:min(100%, 280px);
-        margin:25px auto 0;
-    }
-
-    .pinBtn{
-        width:100%;
-        height:68px;
-        font-size:24px;
-    }
-
-    #heartDisplay{
-        gap:10px;
-    }
-
-    .heartSlot{
-        font-size:28px;
     }
 
     #memoryImage{
@@ -744,8 +706,7 @@ button:hover{
     #replayBtn,
     #beginJourney,
     #unlockButton,
-    #openLetterBtn,
-    #promiseNextBtn{
+    #openLetterBtn{
 
         width:100%;
         font-size:18px;
@@ -759,95 +720,7 @@ button:hover{
 
     }
 
-    #storyLine,
-    .cakeTitle,
-    .finalCard h1,
-    .promise-title{
-        font-size:clamp(28px, 7vw, 42px);
-    }
-
-    #welcomeScreen h1{
-        font-size:38px;
-    }
-
-    #welcomeScreen h2{
-        font-size:30px;
-    }
-
-    #welcomeScreen p,
-    #memoryQuote,
-    .finalCard p,
-    .cakeText,
-    .wrongMessage,
-    .promise-body{
-        font-size:16px;
-    }
-
-    #promiseText{
-        font-size:26px;
-        width:100%;
-    }
-
-    .wrong-popup{
-        width:min(82vw, 300px);
-    }
-
-    #scrollUpBtn,
-    #scrollDownBtn{
-        width:48px;
-        height:48px;
-        right:14px;
-    }
-
-    #scrollUpBtn{ bottom:88px; }
-    #scrollDownBtn{ bottom:22px; }
-
-    #countNumber,
-    .cakeEmoji{
-        font-size:72px;
-    }
-
-}    
-
-@media (max-width: 480px){
-    .container,
-    .memoryCard,
-    .letterCard,
-    .finalCard,
-    .giftCard,
-    .loadingCard,
-    .promise-card{
-        width:min(94vw, 360px);
-        padding:18px 14px;
-    }
-
-    #title,
-    .cakeTitle,
-    .finalCard h1{
-        font-size:28px;
-    }
-
-    button,
-    .memoryButtons button,
-    .pinBtn,
-    #unlockButton{
-        font-size:16px;
-    }
-
-    .pinBtn{
-        height:62px;
-    }
-
-    #memoryCount{
-        font-size:18px;
-    }
-
-    #memoryQuote{
-        font-size:22px;
-        padding:14px 16px;
-    }
 }
-
 #letterContent{
 
     display:none;
@@ -2271,7 +2144,7 @@ opacity:1;
     display:none;
     justify-content:center;
     align-items:center;
-    overflow:hidden;      /* IMPORTANT */
+    overflow:hidden;
     background:linear-gradient(135deg,#35115d,#ff4fa0);
     z-index:99999;
 }
@@ -2283,6 +2156,10 @@ opacity:1;
     padding:35px;
     overflow-y:auto;
     border-radius:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 .promise-card h1{
     font-size:45px;
@@ -2294,11 +2171,8 @@ opacity:1;
 #promiseText{
 
     width:90%;
-
     max-width:700px;
-
     margin:25px auto;
-
     color:#ffffff;
     font-family: 'Tangerine', cursive;
     font-size: 40px;
@@ -2306,13 +2180,51 @@ opacity:1;
     line-height:1.2;
     text-align:center;
     white-space:pre-line;
-
+    display:block;
+    flex:1 1 auto;
+    width:100%;
+    max-width:100%;
     text-shadow:
         0 2px 8px rgba(0,0,0,.8),
         0 0 15px rgba(255,255,255,.2);
 
     animation:promiseFade 1s ease;
 
+}
+
+@media (max-width: 768px){
+    .promise-screen{
+        padding:16px;
+        box-sizing:border-box;
+        flex-direction:column;
+    }
+
+    .promise-card{
+        width:100%;
+        max-width:100%;
+        height:auto;
+        min-height:88vh;
+        padding:22px 18px;
+        border-radius:20px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .promise-card h1{
+        font-size:clamp(28px, 7vw, 40px);
+        margin-bottom:18px;
+    }
+
+    #promiseText{
+        width:100%;
+        max-width:100%;
+        margin:0 auto 18px;
+        font-size:clamp(28px, 7vw, 38px);
+        line-height:1.3;
+        word-break:break-word;
+    }
 }
 
 @keyframes cardRise{
@@ -2861,7 +2773,9 @@ body{
         word-wrap:break-word;
     }
 }
-
+*{
+    outline:1px solid red !important;
+}
 @media (max-width:768px){
 
     html,
