@@ -2130,32 +2130,22 @@ opacity:1;
 /* Promise Screen */
 
 .promise-screen{
-    position:fixed;
-    inset:0;
     width:100%;
-    height:100vh;
-    display:none;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    overflow:hidden;      /* IMPORTANT */
-    background:linear-gradient(135deg,#35115d,#ff4fa0);
-    z-index:99999;
+    padding:40px 20px;
+    box-sizing:border-box;
+    overflow-x:hidden;
 }
 
 .promise-card{
-
-    width:min(92%,900px);
-
-    height:90vh;
-
-    padding:35px;
-
-    overflow-y:auto;
-
-    border-radius:25px;
-
-    box-sizing:border-box;
-
+    width:100%;
+    max-width:700px;
+    margin:0 auto;
+    text-align:center;
 }
 .promise-card h1{
     font-size:45px;
@@ -2623,31 +2613,11 @@ transform:translateY(-12px);
 
 }
 .replayBtn{
-
-    margin-top:40px;
-
-    padding:16px 38px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:linear-gradient(135deg,#ff4f93,#ff85b5);
-
-    color:#fff;
-
-    font-size:20px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    box-shadow:0 10px 30px rgba(255,80,140,.35);
-
-    transition:.3s;
-
-    animation:pulseReplay 2s infinite;
-
+    display:block;
+    width:90%;
+    max-width:350px;
+    margin:35px auto 0;
+    position:static;
 }
 
 .replayBtn:hover{
@@ -2876,5 +2846,40 @@ body{
 
     body{
         overflow-x:hidden !important;
+    }
+}
+@media (max-width:768px){
+
+    .promise-screen{
+        display:flex !important;
+        flex-direction:column !important;
+        width:100% !important;
+        min-height:100vh !important;
+        padding:25px 18px !important;
+    }
+
+    .promise-card{
+        width:100% !important;
+        max-width:100% !important;
+        margin:0 auto !important;
+    }
+
+    .promise-title{
+        width:100%;
+        text-align:center;
+        font-size:42px;
+        line-height:1.2;
+        white-space:normal;
+    }
+
+    .promise-body{
+        width:100%;
+        text-align:center;
+    }
+
+    .replayBtn{
+        position:static !important;
+        margin:30px auto 0 !important;
+        width:90% !important;
     }
 }
