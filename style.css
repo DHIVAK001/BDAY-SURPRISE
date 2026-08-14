@@ -1,3 +1,21 @@
+:root{
+    --bg-1: #fff1f7;
+    --bg-2: #f7ebff;
+    --bg-3: #fef7ff;
+    --pink: #ff4f93;
+    --pink-strong: #ff2f7a;
+    --rose: #ff8ec1;
+    --purple: #8b5cf6;
+    --purple-deep: #47206d;
+    --lavender: #d9c6ff;
+    --card-bg: rgba(255,255,255,0.24);
+    --glass-line: rgba(255,255,255,0.35);
+    --text: #411c42;
+    --text-soft: #6b4469;
+    --shadow: rgba(98, 30, 78, 0.2);
+    --shadow-strong: rgba(69, 22, 78, 0.32);
+}
+
 *{
     margin:0;
     padding:0;
@@ -6,9 +24,8 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg,#ffd6e8,#ffeef5,#fff5fa);
-    height:100vh;
-
+    background: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -17,69 +34,57 @@ body{
     overflow-x:hidden;
     background-size:120%;
     transition:background-position .4s;
-    
+    color:var(--text);
 }
 
 .container{
-
     text-align:center;
     margin-top: 300px;
-    background:white;
-
+    background:rgba(255,255,255,0.28);
+    border:1px solid rgba(255,255,255,0.4);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
     padding:60px;
-
-    border-radius:25px;
-
-    box-shadow:0 10px 35px rgba(0,0,0,0.15);
-
+    border-radius:28px;
+    box-shadow:0 18px 45px rgba(90, 35, 86, 0.12);
     width:85%;
     max-width:700px;
 }
 
 h1{
-
-    color:#ff2e7e;
-
+    color:var(--pink-strong);
     font-size:55px;
-
     margin-bottom:20px;
+    text-shadow:0 2px 10px rgba(255, 119, 181, 0.2);
 }
 
 p{
-
     font-size:24px;
-
-    color:#555;
-
+    color:var(--text-soft);
     margin-bottom:35px;
-
 }
 
 button{
-
-    background:#ff2e7e;
-
+    background:linear-gradient(135deg, var(--pink), var(--purple));
     color:white;
-
-    border:none;
-
+    border:1px solid rgba(255,255,255,0.25);
     padding:18px 45px;
-
     font-size:22px;
-
     border-radius:50px;
-
     cursor:pointer;
-
-    transition:0.3s;
+    box-shadow:0 12px 26px rgba(255, 79, 147, 0.28);
+    transition:0.25s ease;
+    font-weight:600;
 }
 
 button:hover{
+    background:linear-gradient(135deg, var(--pink-strong), var(--purple));
+    transform:translateY(-2px) scale(1.02);
+    box-shadow:0 16px 30px rgba(138, 92, 246, 0.32);
+}
 
-    background:#ff1f71;
-
-    transform:scale(1.08);
-
+button:active{
+    transform:translateY(0) scale(0.98);
 }
 .container{
     animation: fadeIn 2s ease;
@@ -164,34 +169,24 @@ button:hover{
 /* Password Input */
 
 #password{
-
     width:320px;
-
     max-width:90%;
-
     padding:18px;
-
     font-size:20px;
-
-    border:2px solid #ff4f95;
-
+    border:2px solid rgba(255, 79, 147, 0.7);
     border-radius:50px;
-
     outline:none;
-
     text-align:center;
-
     margin-top:20px;
-
+    background:rgba(255,255,255,0.7);
+    color:var(--text);
+    box-shadow:0 8px 20px rgba(129, 77, 155, 0.08);
     transition:0.3s;
 }
 
 #password:focus{
-
-    border-color:#ff1f71;
-
-    box-shadow:0 0 20px rgba(255,79,149,0.5);
-
+    border-color:var(--purple);
+    box-shadow:0 0 0 4px rgba(139, 92, 246, 0.12), 0 0 20px rgba(255,79,149,0.35);
 }
 /* Loading Screen */
 
@@ -763,39 +758,23 @@ button:hover{
 
 }
 #musicToggle{
-
     position:fixed;
-
     top:20px;
-
     right:20px;
-
     width:65px;
     height:65px;
-
-    border:none;
+    border:1px solid rgba(255,255,255,0.45);
     border-radius:50%;
-
-    background:linear-gradient(135deg,#ff4f93,#ff2f7a);
-
+    background:linear-gradient(135deg, rgba(255, 79, 147, 0.95), rgba(139, 92, 246, 0.95));
     color:white;
-
     font-size:28px;
-
     cursor:pointer;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    box-shadow:
-        0 0 15px rgba(255,79,147,.5),
-        0 0 35px rgba(255,79,147,.3);
-
+    box-shadow:0 18px 35px rgba(99, 54, 129, 0.26);
     z-index:999999;
-
     transition:.3s;
-
     animation:heartBeat 2s infinite;
 }
 
@@ -1194,11 +1173,14 @@ button:hover{
 .giftCard{
     width:90%;
     max-width:420px;
-    background:white;
+    background:rgba(255,255,255,0.2);
+    border:1px solid rgba(255,255,255,0.28);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
     padding:35px;
     border-radius:25px;
     text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    box-shadow:0 18px 40px rgba(75, 33, 85, 0.15);
 }
 
 #openGiftBtn{
@@ -1237,47 +1219,34 @@ button:hover{
 
 }
 #pinPad{
-
     display:grid;
-
     grid-template-columns:repeat(3,80px);
-
     gap:15px;
-
     justify-content:center;
-
     margin-top:25px;
-
 }
 
 .pinBtn{
-
     width:80px;
     height:80px;
-
-    border:none;
+    border:1px solid rgba(255,255,255,0.26);
     border-radius:50%;
-
     display:flex;
     justify-content:center;
     align-items:center;
     font-family:'Poppins',sans-serif;
     font-size:30px;
     font-weight:700;
-
     cursor:pointer;
-
-    background:#ff4f93;
+    background:linear-gradient(135deg, rgba(255, 79, 147, 0.95), rgba(139, 92, 246, 0.95));
     color:white;
-
+    box-shadow:0 12px 25px rgba(124, 60, 138, 0.18);
     transition:.25s;
-    
 }
 
 .pinBtn:hover{
-
-    transform:scale(1.08);
-
+    transform:translateY(-2px) scale(1.04);
+    box-shadow:0 15px 30px rgba(139, 92, 246, 0.25);
 }
 #heartDisplay{
 
@@ -1364,63 +1333,40 @@ button:hover{
 
 }
 #giftBox{
-
     position:relative;
-
     width:170px;
-
     height:170px;
-
     margin:40px auto;
-
     cursor:pointer;
-
     transition:.4s;
-
+    filter:drop-shadow(0 12px 22px rgba(109, 52, 120, 0.18));
 }
 
 #giftBox:hover{
-
     transform:scale(1.06);
-
 }
 
 #giftBody{
-
     position:absolute;
-
     bottom:0;
-
     width:170px;
-
     height:120px;
-
-    background:#ff5c9d;
-
+    background:linear-gradient(135deg, #ff6ea9, #d66ef7);
     border-radius:12px;
-
+    border:1px solid rgba(255,255,255,0.2);
 }
 
 #giftLid{
-
     position:absolute;
-
     top:20px;
-
     width:180px;
-
     left:-5px;
-
     height:40px;
-
-    background:#ff3d85;
-
+    background:linear-gradient(135deg, #ff5ba3, #a96af9);
     border-radius:10px;
-
     transition:.6s;
-
     transform-origin:left center;
-
+    border:1px solid rgba(255,255,255,0.2);
 }
 
 #giftRibbonVertical{
@@ -2144,48 +2090,52 @@ opacity:1;
     display:none;
     justify-content:center;
     align-items:center;
-    overflow:hidden;      /* IMPORTANT */
-    background:linear-gradient(135deg,#35115d,#ff4fa0);
+    overflow:hidden;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.28), transparent 30%),
+        linear-gradient(135deg, rgba(58, 15, 84, 0.96), rgba(255, 79, 160, 0.9), rgba(255, 164, 201, 0.88));
     z-index:99999;
 }
 
 .promise-card{
-    width:90%;
-    max-width:900px;
-    height:90vh;
-    padding:35px;
+    width:min(90vw, 900px);
+    max-height:90vh;
+    padding:30px 28px 26px;
     overflow-y:auto;
-    border-radius:25px;
+    border-radius:28px;
+    background:rgba(255,255,255,0.09);
+    border:1px solid rgba(255,255,255,0.22);
+    box-shadow:0 20px 50px rgba(31, 10, 38, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-sizing:border-box;
 }
 .promise-card h1{
     font-size:45px;
-    margin-bottom:30px;
-    color:#ffd700;
-    text-shadow:0 0 20px gold;
+    margin-bottom:20px;
+    color:#fff7fb;
+    text-shadow:0 0 22px rgba(255,255,255,0.35), 0 0 18px rgba(255, 98, 174, 0.9);
 }
 
 #promiseText{
-
-    width:90%;
-
+    width:100%;
     max-width:700px;
-
-    margin:25px auto;
-
-    color:#ffffff;
+    margin:10px auto 20px;
+    color:#fffafc;
     font-family: 'Tangerine', cursive;
-    font-size: 40px;
+    font-size:40px;
     font-weight:600;
-    line-height:1.2;
+    line-height:1.25;
     text-align:center;
     white-space:pre-line;
-
-    text-shadow:
-        0 2px 8px rgba(0,0,0,.8),
-        0 0 15px rgba(255,255,255,.2);
-
+    display:block;
+    text-shadow:0 2px 10px rgba(0,0,0,0.35), 0 0 18px rgba(255,226,239,0.28);
     animation:promiseFade 1s ease;
-
+    word-break:break-word;
 }
 
 @keyframes cardRise{
@@ -2734,9 +2684,7 @@ body{
         word-wrap:break-word;
     }
 }
-*{
-    outline:1px solid red !important;
-}
+
 @media (max-width:768px){
 
     html,
